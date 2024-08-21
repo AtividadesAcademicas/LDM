@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menor Valor</title>
+</head>
+<body>
+    <script>
+        function menorValor(a, b, c, d, e) {
+            let menor = a
+            if(b < menor) menor = b
+            if(c < menor) menor = c
+            if(d < menor) menor = d
+            if(e < menor) menor = e
+            return menor
+        }
+
+        alert('Digite cinco valores')
+        var a = parseInt(prompt("Digite o 1° valor:"))
+        var b = parseInt(prompt("Digite o 2° valor:"))
+        var c = parseInt(prompt("Digite o 3° valor:"))
+        var d = parseInt(prompt("Digite o 4° valor:"))
+        var e = parseInt(prompt("Digite o 5° valor:"))
+        alert('O menor valor digitado é ' + menorValor(a, b, c, d, e))
+    </script>
+</body>
+</html>
