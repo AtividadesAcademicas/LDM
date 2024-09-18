@@ -39,3 +39,14 @@ app.post('/cadastrar', function(req, res) {
         console.log("Erro ao cadastrar: " + error)
     })
 })
+
+app.get('/consulta', async function(req, res) {
+    const clientes_collection = db.collection('clientes')
+    const snapshot = await clientes_collection.get()
+    let clientes = []
+    snapshot.forEach(cliente => {
+        clientes.push(cliente.data())
+    })
+    res.render('consulta', {clientes : clientes})
+    console.log(clientes)
+})
