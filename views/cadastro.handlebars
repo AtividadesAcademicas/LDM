@@ -1,10 +1,10 @@
 <div class="container text-center">
     <div class="row">
         <div class="col">
-            <nav class="navbar bg-body-tertiary">
+            <nav class="navbar bg-primary">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                        Bootstrap
+                    <a class="navbar-brand text-bg-primary" href="/">
+                        Sistema de agendamentos
                     </a>
                 </div>
             </nav>
@@ -13,20 +13,18 @@
     <div class="row">
         <div class="col">
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Navbar</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="#">Features</a>
-                    <a class="nav-link" href="#">Pricing</a>
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/">Home</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <a class="nav-link" href="/cadastrar">Cadastrar</a>
+                            <a class="nav-link" href="/consulta">Consultar</a>
+                        </div>
+                    </div>
                 </div>
-                </div>
-            </div>
             </nav>
         </div>
     </div>
@@ -36,7 +34,7 @@
         </div>
     </div>
     <form action="/cadastrar" method="post">
-        <div class="row">
+        <div class="row mb-3">
             <div class="col">
                 Nome:
             </div>
@@ -44,7 +42,7 @@
                 <input type="text" class="form-control" id="nome" name="nome">
             </div>
         </div>
-        <div class="row">
+        <div class="row mb-3">
             <div class="col">
                 Endereço:
             </div>
@@ -52,7 +50,7 @@
                 <input type="text" class="form-control" id="endereco" name="endereco">
             </div>
         </div>
-        <div class="row">
+        <div class="row mb-3">
             <div class="col">
                 Bairro:
             </div>
@@ -60,7 +58,7 @@
                 <input type="text" class="form-control" id="bairro" name="bairro">
             </div>
         </div>
-        <div class="row">
+        <div class="row mb-3">
             <div class="col">
                 Cep:
             </div>
@@ -68,7 +66,7 @@
                 <input type="text" class="form-control" id="cep" name="cep">
             </div>
         </div>
-        <div class="row">
+        <div class="row mb-3">
             <div class="col">
                 Cidade:
             </div>
@@ -76,7 +74,7 @@
                 <input type="text" class="form-control" id="cidade" name="cidade">
             </div>
         </div>
-        <div class="row">
+        <div class="row mb-3">
             <div class="col">
                 Estado:
             </div>
@@ -84,7 +82,7 @@
                 <input type="text" class="form-control" id="estado" name="estado">
             </div>
         </div>
-        <div class="row">
+        <div class="row mb-3">
             <div class="col">
                 Telefone:
             </div>
@@ -92,7 +90,7 @@
                 <input type="text" class="form-control" id="telefone" name="telefone">
             </div>
         </div>
-        <div class="row">
+        <div class="row mb-3">
             <div class="col">
                 Celular:
             </div>
@@ -100,12 +98,17 @@
                 <input type="text" class="form-control" id="celular" name="celular">
             </div>
         </div>
+        <div class="row mb-3">
+            <div class="col">
+                &nbsp;
+            </div>
+        </div>
         <div class="row">
             <div class="col">
                 <button class="btn btn-primary" type="submit">Cadastrar</button>
             </div>
             <div class="col">
-                <button class="btn btn-primary" type="reset">Cancelar</button>
+                <button class="btn btn-outline-primary" type="reset">Cancelar</button>
             </div>
         </div>
     </form>
