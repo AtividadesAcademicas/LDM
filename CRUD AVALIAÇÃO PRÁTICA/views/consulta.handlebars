@@ -1,0 +1,34 @@
+<div class="container">
+    <h1>Tela de Consulta</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Endereço</th>
+                <th>Bairro</th>
+                <th>CEP</th>
+                <th>Cidade</th>
+                <th>Estado</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each clients}}
+            {{#dataValues}}
+                <tr>
+                    <td>{{nome}}</td>
+                    <td>{{endereco}}</td>
+                    <td>{{bairro}}</td>
+                    <td>{{cep}}</td>
+                    <td>{{cidade}}</td>
+                    <td>{{estado}}</td>
+                    <td>
+                        <button class="btn btn-primary" onclick="location.href='/atualizar/{{id}}'">Editar</button>
+                        <button class="btn btn-danger" onclick="location.href='/excluir/{{id}}'">Excluir</button>
+                    </td>
+                </tr>
+            {{/dataValues}}
+            {{/each}}
+        </tbody>
+    </table>
+    </div>

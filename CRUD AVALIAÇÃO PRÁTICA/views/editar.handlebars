@@ -1,0 +1,35 @@
+<div class="container">
+    <h1>Tela de Edição</h1>
+    {{#each clients}}
+    {{#dataValues}}
+        <form action="/atualizar" method="post">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="hidden" id="id" name="id" value="{{id}}">
+                <input name="nome" type="text" class="form-control" id="nome" value="{{nome}}">
+            </div>
+            <div class="form-group">
+                <label for="endereco">Endereço:</label>
+                <input name="endereco" type="text" class="form-control" id="endereco" value="{{endereco}}">
+            </div>
+            <div class="form-group">
+                <label for="bairro">Bairro:</label>
+                <input name="bairro" type="text" class="form-control" id="bairro" value="{{bairro}}">
+            </div>
+            <div class="form-group">
+                <label for="cep">CEP:</label>
+                <input name="cep" type="text" class="form-control" id="cep" value="{{cep}}">
+            </div>
+            <div class="form-group">
+                <label for="cidade">Cidade:</label>
+                <input name="cidade" type="text" class="form-control" id="cidade" value="{{cidade}}">
+            </div>
+            <div class="form-group">
+                <label for="estado">Estado:</label>
+                <input name="estado" type="text" class="form-control" id="estado" value="{{estado}}">
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+    {{/dataValues}}
+    {{/each}}
+</div>
