@@ -56,7 +56,7 @@ app.post('/atualizar', function(req, res) {
         cep: req.body.cep,
         cidade: req.body.cidade,
         estado: req.body.estado
-    }, {where:{'id': req.body.id}}).then(function() {
+    }, {where:{'id': req.body}}).then(function() {
         res.redirect('/consultar')
     }).catch(function(error) {
         res.send("Erro ao atualizar: " + error)

@@ -39,3 +39,39 @@ app.post('/cadastrar', function(req, res) {
         console.log("Erro ao cadastrar: " + error)
     })
 })
+
+app.get('/consulta', function(req, res) {
+    var posts = []
+    db.collection('clientes').get().then((snapshot) => {
+        snapshot.forEach((doc) => {
+            posts.push({id: doc.id, ...doc.data()})
+        })
+        res.render('consulta',{posts: posts})
+    })
+})
+
+app.get("/editar/:id", function(req, res){
+    var posts = []
+    const clientes = db.collection('clientes').doc(req.params.id).get().then(
+        function(doc){
+            const data = doc.data()
+            data.id = doc.id
+            posts.push(data)
+            res.render('editar', {posts: posts})
+        }
+    )    
+})
+
+app.post('/editar', function(req, res) {
+    db.collection('clientes').doc(req.body.id).set({
+        nome: req.body.nome,
+        telefone: req.body.telefone,
+        origem: req.body.origem,
+        data_contato: req.body.data_contato,
+        observacao: req.body.observacao
+    }).then(function() {
+        res.redirect('/consulta')
+    }).catch(function(error) {
+        console.log("Erro ao editar: " + error)
+    })
+})
