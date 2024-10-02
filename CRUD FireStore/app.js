@@ -6,6 +6,11 @@ const { initializeApp, applicationDefault, cert } = require('firebase-admin/app'
 const { getFirestore, Timestamp, FieldValue, Filter } = require('firebase-admin/firestore');
 const seviceAccount = require('./dsm-ldm-firebase-adminsdk-2xndv-538b73f1f9.json')
 
+const Handlebars = require('handlebars');
+Handlebars.registerHelper('eq', function(a, b) {
+  return a === b;
+});
+
 initializeApp({
     credential: cert(seviceAccount)
 })
@@ -52,14 +57,12 @@ app.get('/consulta', function(req, res) {
 
 app.get("/editar/:id", function(req, res){
     var posts = []
-    const clientes = db.collection('clientes').doc(req.params.id).get().then(
-        function(doc){
-            const data = doc.data()
-            data.id = doc.id
-            posts.push(data)
-            res.render('editar', {posts: posts})
-        }
-    )    
+    db.collection('clientes').doc(req.params.id).get().then(function(doc) {
+        const data = doc.data()
+        data.id = doc.id
+        posts.push(data)
+        res.render('editar', {posts: posts})
+    })    
 })
 
 app.post('/editar', function(req, res) {
@@ -73,5 +76,13 @@ app.post('/editar', function(req, res) {
         res.redirect('/consulta')
     }).catch(function(error) {
         console.log("Erro ao editar: " + error)
+    })
+})
+
+app.get('/excluir/:id', async (req, res) => {
+    db.collection('clientes').doc(req.params.id).delete().then(function() {
+        res.redirect('/consulta')
+    }).catch(function(error) {
+      console.log("Erro ao deletar: " + error)
     })
 })

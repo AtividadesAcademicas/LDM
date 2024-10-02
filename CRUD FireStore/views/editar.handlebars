@@ -56,9 +56,9 @@
                     <div class="mb-3 text-start">
                         <label class="form-label">Origem:</label>
                         <select name="origem" class="form-select" aria-label="Default select example">
-                            <option value="celular" selected>Celular</option>
-                            <option value="whatsapp">Whatsapp</option>
-                            <option value="telefone_fixo">Telefone Fixo</option>
+                            <option value="celular" {{#if (eq origem "celular")}}selected{{/if}}>Celular</option>
+                            <option value="whatsapp" {{#if (eq origem "whatsapp")}}selected{{/if}}>Whatsapp</option>
+                            <option value="telefone_fixo" {{#if (eq origem "telefone_fixo")}}selected{{/if}}>Telefone Fixo</option>
                         </select>
                     </div>
                     <div class="mb-3 text-start">
