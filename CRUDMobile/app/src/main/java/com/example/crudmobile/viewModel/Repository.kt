@@ -2,6 +2,7 @@ package com.example.crudmobile.viewModel
 
 import com.example.crudmobile.roomDB.Pessoa
 import com.example.crudmobile.roomDB.PessoaDatabase
+import kotlinx.coroutines.flow.Flow
 
 class Repository(private val db: PessoaDatabase) {
     suspend fun upsertPessoa(pessoa: Pessoa) {
@@ -12,7 +13,7 @@ class Repository(private val db: PessoaDatabase) {
         db.pessoaDao().deletePessoa(pessoa)
     }
 
-    fun getAllPessoas(): List<Pessoa> {
+    fun getAllPessoas(): Flow<List<Pessoa>> {
         return db.pessoaDao().getAllPessoas()
     }
 }
